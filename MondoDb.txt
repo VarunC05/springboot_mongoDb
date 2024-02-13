@@ -1,0 +1,30 @@
+MongoDB
+
+	- MongoDb is a non-sequential database where there is no fixed schema.
+	- it comes with the similar structure like database-collection-document-fields.
+	- it stores the value in bson(binary represntation of json) format.
+	- each row/field is its own id.
+	- The basic difference between mongo and mongodb is mongo is the provides commands for storing data into mongodb.
+	- mongodb V6.0 does not support cmd as it was deprecated, instead it provides its own shell called mongosh. Mongosh is to be downloaded explicitly.
+
+ commands related to database:
+  1.  show dbs;              = to view all database
+  2.  use <db name>          = to create a new db or switch to existing db 
+  3.  db 	             = to view current database 
+  4.  db.dropDatabase()      = to drop the cureent database
+
+ commands related to collections:
+  1. show collections      		        = to view collections in current database
+  2. db.createCollection('<collection name>')   = to create a collection in current db 
+  3. db.<collection name>.drop()		= to delete the collection
+  4. db.<collection name>.insert({'key1':'value1'}) = to insert data into document
+  5. db.<collection name>.insert{[{'key1':'value1'},{'key2:'value2'}]) = to insert multiple data into document
+  6. db.<collection name>.find()		= to view all data in collection
+  7. db.<collection name>.find({'key':'value'}) = to view all the data with matching key and value 
+
+	- mongodb V6.0 does not support update(), instead it has updateOne(),updateMany().
+  8. db.<collection name>.updateOne({'key':'value'},{'$set':{'key1':'value1','key2':'value2'}}) = to update any data in a row
+  9. db.<collection name>.deleteOne({'key':'value'}) = to delete a row based on the key,value
+ 10. db.<collection name>.find({'key':{$lt:value}}) = to find a row which is less the value
+
+ 
